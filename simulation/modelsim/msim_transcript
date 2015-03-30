@@ -160,34 +160,8 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run 200 ns
-restart -f
-# Loading sv_std.std
-# Loading work.mp0_tb
-# Loading work.lc3b_types
-# Loading work.mp0_sv_unit
-# Loading work.mp0
-# Loading work.datapath_sv_unit
-# Loading work.datapath
-# Loading work.mux2
-# Loading work.register
-# Loading work.adder
-# Loading work.adj_sv_unit
-# Loading work.adj
-# Loading work.ir_sv_unit
-# Loading work.ir
-# Loading work.regfile_sv_unit
-# Loading work.regfile
-# Loading work.alu_sv_unit
-# Loading work.alu
-# Loading work.gencc_sv_unit
-# Loading work.gencc
-# Loading work.comp_sv_unit
-# Loading work.comp
-# Loading work.plus2
-# Loading work.control_sv_unit
-# Loading work.control
-# Loading work.magic_memory
-run 10000ns
+add wave -position end  sim:/mp0_tb/dut/ctrl/opcode
+add wave -position end  sim:/mp0_tb/dut/ctrl/state
 add wave -position end  sim:/mp0_tb/dut/dpth/rgf/data
 restart -f
 # Loading sv_std.std
@@ -216,33 +190,4 @@ restart -f
 # Loading work.control_sv_unit
 # Loading work.control
 # Loading work.magic_memory
-run 10000ns
-add wave -position end  sim:/mp0_tb/dut/dpth/pc_out
-restart -f
-# Loading sv_std.std
-# Loading work.mp0_tb
-# Loading work.lc3b_types
-# Loading work.mp0_sv_unit
-# Loading work.mp0
-# Loading work.datapath_sv_unit
-# Loading work.datapath
-# Loading work.mux2
-# Loading work.register
-# Loading work.adder
-# Loading work.adj_sv_unit
-# Loading work.adj
-# Loading work.ir_sv_unit
-# Loading work.ir
-# Loading work.regfile_sv_unit
-# Loading work.regfile
-# Loading work.alu_sv_unit
-# Loading work.alu
-# Loading work.gencc_sv_unit
-# Loading work.gencc
-# Loading work.comp_sv_unit
-# Loading work.comp
-# Loading work.plus2
-# Loading work.control_sv_unit
-# Loading work.control
-# Loading work.magic_memory
-run 10000ns
+run 4000ns

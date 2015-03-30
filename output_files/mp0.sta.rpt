@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for mp0
-Tue Jan 27 20:32:54 2015
+Thu Mar 19 15:47:11 2015
 Quartus II 32-bit Version 13.1.4 Build 182 03/12/2014 SJ Full Version
 
 
@@ -117,7 +117,7 @@ applicable agreement for further details.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; mp0.out.sdc   ; OK     ; Tue Jan 27 20:32:51 2015 ;
+; mp0.out.sdc   ; OK     ; Thu Mar 19 15:47:07 2015 ;
 +---------------+--------+--------------------------+
 
 
@@ -1074,7 +1074,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
     Info: Version 13.1.4 Build 182 03/12/2014 SJ Full Version
-    Info: Processing started: Tue Jan 27 20:32:48 2015
+    Info: Processing started: Thu Mar 19 15:47:04 2015
 Info: Command: quartus_sta mp0 -c mp0
 Info: qsta_default_script.tcl version: #1
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
@@ -1140,8 +1140,8 @@ Info (332101): Design is fully constrained for setup requirements
 Info (332101): Design is fully constrained for hold requirements
 Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 512 megabytes
-    Info: Processing ended: Tue Jan 27 20:32:54 2015
-    Info: Elapsed time: 00:00:06
+    Info: Processing ended: Thu Mar 19 15:47:11 2015
+    Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:02
 
 

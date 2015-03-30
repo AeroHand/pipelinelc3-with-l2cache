@@ -1,5 +1,5 @@
 EDA Netlist Writer report for mp0
-Tue Jan 27 20:33:01 2015
+Thu Mar 19 15:47:20 2015
 Quartus II 32-bit Version 13.1.4 Build 182 03/12/2014 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue Jan 27 20:33:01 2015 ;
+; EDA Netlist Writer Status ; Successful - Thu Mar 19 15:47:20 2015 ;
 ; Revision Name             ; mp0                                   ;
 ; Top-level Entity Name     ; mp0                                   ;
 ; Family                    ; Stratix III                           ;
@@ -88,7 +88,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit EDA Netlist Writer
     Info: Version 13.1.4 Build 182 03/12/2014 SJ Full Version
-    Info: Processing started: Tue Jan 27 20:32:56 2015
+    Info: Processing started: Thu Mar 19 15:47:15 2015
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off mp0 -c mp0
 Info (204019): Generated file mp0_2_1100mv_85c_slow.svo in folder "/home/kzhang9/ece411/mp0/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file mp0_2_1100mv_0c_slow.svo in folder "/home/kzhang9/ece411/mp0/simulation/modelsim/" for EDA simulation tool
@@ -99,9 +99,9 @@ Info (204019): Generated file mp0_2_1100mv_0c_v_slow.sdo in folder "/home/kzhang
 Info (204019): Generated file mp0_min_1100mv_0c_v_fast.sdo in folder "/home/kzhang9/ece411/mp0/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file mp0_v.sdo in folder "/home/kzhang9/ece411/mp0/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 32-bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 385 megabytes
-    Info: Processing ended: Tue Jan 27 20:33:02 2015
-    Info: Elapsed time: 00:00:06
+    Info: Peak virtual memory: 386 megabytes
+    Info: Processing ended: Thu Mar 19 15:47:20 2015
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:02
 
 

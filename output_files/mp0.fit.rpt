@@ -1,5 +1,5 @@
 Fitter report for mp0
-Tue Jan 27 20:32:36 2015
+Thu Mar 19 15:46:48 2015
 Quartus II 32-bit Version 13.1.4 Build 182 03/12/2014 SJ Full Version
 
 
@@ -67,7 +67,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Fitter Summary                                                              ;
 +-------------------------------+---------------------------------------------+
-; Fitter Status                 ; Successful - Tue Jan 27 20:32:36 2015       ;
+; Fitter Status                 ; Successful - Thu Mar 19 15:46:48 2015       ;
 ; Quartus II 32-bit Version     ; 13.1.4 Build 182 03/12/2014 SJ Full Version ;
 ; Revision Name                 ; mp0                                         ;
 ; Top-level Entity Name         ; mp0                                         ;
@@ -2481,16 +2481,16 @@ Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.36 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.42 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:04
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:03
 Info: Quartus II 32-bit Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 773 megabytes
-    Info: Processing ended: Tue Jan 27 20:32:38 2015
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:12
+    Info: Peak virtual memory: 781 megabytes
+    Info: Processing ended: Thu Mar 19 15:46:50 2015
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:13
 
 

@@ -1,5 +1,5 @@
 Flow report for mp0
-Tue Jan 27 20:33:02 2015
+Thu Mar 19 15:47:20 2015
 Quartus II 32-bit Version 13.1.4 Build 182 03/12/2014 SJ Full Version
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Flow Summary                                                                ;
 +-------------------------------+---------------------------------------------+
-; Flow Status                   ; Successful - Tue Jan 27 20:33:01 2015       ;
+; Flow Status                   ; Successful - Thu Mar 19 15:47:20 2015       ;
 ; Quartus II 32-bit Version     ; 13.1.4 Build 182 03/12/2014 SJ Full Version ;
 ; Revision Name                 ; mp0                                         ;
 ; Top-level Entity Name         ; mp0                                         ;
@@ -66,7 +66,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/27/2015 20:32:17 ;
+; Start date & time ; 03/19/2015 15:46:26 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; mp0                 ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ applicable agreement for further details.
 +--------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 176831337767381.142241233712473       ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 71094330539491.142679798517255        ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                    ; --            ; --          ; mp0_tb         ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; mp0_tb                                ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                     ; --            ; --          ; eda_simulation ;
@@ -106,12 +106,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 440 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:14     ; 1.0                     ; 773 MB              ; 00:00:12                           ;
+; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 441 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:16     ; 1.0                     ; 781 MB              ; 00:00:13                           ;
 ; Assembler                 ; 00:00:05     ; 1.0                     ; 418 MB              ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:06     ; 1.0                     ; 512 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:05     ; 1.0                     ; 375 MB              ; 00:00:02                           ;
-; Total                     ; 00:00:34     ; --                      ; --                  ; 00:00:22                           ;
+; TimeQuest Timing Analyzer ; 00:00:07     ; 1.0                     ; 512 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:05     ; 1.0                     ; 376 MB              ; 00:00:02                           ;
+; Total                     ; 00:00:42     ; --                      ; --                  ; 00:00:23                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -120,11 +120,11 @@ applicable agreement for further details.
 +---------------------------+-------------------------------+------------------+------------+----------------+
 ; Module Name               ; Machine Hostname              ; OS Name          ; OS Version ; Processor type ;
 +---------------------------+-------------------------------+------------------+------------+----------------+
-; Analysis & Synthesis      ; eceb-2022-22.ews.illinois.edu ; Scientific Linux ; 6          ; x86_64         ;
-; Fitter                    ; eceb-2022-22.ews.illinois.edu ; Scientific Linux ; 6          ; x86_64         ;
-; Assembler                 ; eceb-2022-22.ews.illinois.edu ; Scientific Linux ; 6          ; x86_64         ;
-; TimeQuest Timing Analyzer ; eceb-2022-22.ews.illinois.edu ; Scientific Linux ; 6          ; x86_64         ;
-; EDA Netlist Writer        ; eceb-2022-22.ews.illinois.edu ; Scientific Linux ; 6          ; x86_64         ;
+; Analysis & Synthesis      ; eceb-3070-09.ews.illinois.edu ; Scientific Linux ; 6          ; x86_64         ;
+; Fitter                    ; eceb-3070-09.ews.illinois.edu ; Scientific Linux ; 6          ; x86_64         ;
+; Assembler                 ; eceb-3070-09.ews.illinois.edu ; Scientific Linux ; 6          ; x86_64         ;
+; TimeQuest Timing Analyzer ; eceb-3070-09.ews.illinois.edu ; Scientific Linux ; 6          ; x86_64         ;
+; EDA Netlist Writer        ; eceb-3070-09.ews.illinois.edu ; Scientific Linux ; 6          ; x86_64         ;
 +---------------------------+-------------------------------+------------------+------------+----------------+
 
 
