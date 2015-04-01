@@ -24,17 +24,10 @@ module cpu
 	
 	input imem_resp,
 	
-	// Flip Flop Load for IR2
-	input load_agex_npc,
-	input load_agex_cs,
-	input load_agex_ir,
-	input load_agex_sr1,
-	input load_agex_sr2,
-	input load_agex_cc,
-	input load_agex_drid
+
 
 );
-assign load = ((!(ex_mem_ctrl_out.in_indirect) || indirect_reg_out) && !(ex_mem_ctrl_out.in_mem && !(mem_resp)) && imem_resp);
+
 
 logic branch_enable;
 lc3b_control_word  cntrl_word;
@@ -42,7 +35,8 @@ lc3b_word agex_mem_aluout;
 lc3b_word agex_mem_pcout;
 lc3b_reg agex_mem_destout;
 
-lc3b_work pc_connect;
+lc3b_word pc_connect;
+lc3b_control_word ctrl;
 
 fetch ifetch
 (
@@ -56,7 +50,7 @@ fetch ifetch
 ir1 ir11
 (
     .clk(clk),
-    .load(load),
+
 
     .if_plus2_out(pcplus2),
     .imem_rdata(imem_rdata),
@@ -85,7 +79,7 @@ ir2 ir22
 	.clk,
 	
 	//Loads
-	.load_agex_npc,
+	.load_agex_npc(ctrl.),
 	.load_agex_cs,
 	.load_agex_ir,
 	.load_agex_sr1,
@@ -144,33 +138,36 @@ agex agex
 );
 
 ir3 ir33
-(
+(	//from nick
+
+	.clk,
+	
 	// Load Register Signals
-	.load_mem_npc,
-	.load_mem_cs,
-	.load_mem_ir,
-	.load_mem_address,
-	.load_mem_aluresult,
-	.load_mem_cc,
-	.load_mem_drid,
+	.load_mem_npc(),
+	.load_mem_cs(),
+	.load_mem_ir(),
+	.load_mem_address(),
+	.load_mem_aluresult(),
+	.load_mem_cc(),
+	.load_mem_drid(),
 	
 	// Load Register Contents
-	.mem_address_in,
-	.mem_cs_in,
-	.mem_npc_in,
-	.mem_cc_in,
-	.mem_aluresult_in,
-	.mem_ir_in,
-	.mem_drid_in,
+	.mem_address_in(),
+	.mem_cs_in(),
+	.mem_npc_in(),
+	.mem_cc_in(),
+	.mem_aluresult_in(),
+	.mem_ir_in(),
+	.mem_drid_in(),
 	
 	// Output Register Contents
-	.mem_address_out,
-	.mem_cs_out,
-	.mem_npc_out,
-	.mem_cc_out,
-	.mem_aluresult_out,
-	.mem_ir_out,
-	.mem_drid_out
+	.mem_address_out(ir3_addr_out),
+	.mem_cs_out(ir3_cs_out),
+	.mem_npc_out(ir3_npc_out),
+	.mem_cc_out(),
+	.mem_aluresult_out(ir3_alu_out),
+	.mem_ir_out(ir3_ir_out),
+	.mem_drid_out(ir3_drid_out)
 );
 
 mem mem_stage
@@ -188,7 +185,36 @@ mem mem_stage
 );
 
 ir4 ir44
-();
+(
+    .clk,
+	
+	// Load Register Signals
+	.load_sr_address(),
+	.load_sr_data(),
+	.load_sr_cs(),
+	.load_sr_npc(),
+	.load_sr_aluresult(),
+	.load_sr_ir(),
+	.load_sr_drid(),
+	
+	// Load Register Contents
+	.sr_address_in(ir3_addr_out),
+	.sr_data_in(mem_wdata), // Correct?
+	.sr_cs_in(ir3_cs_out[10:7]),
+	.sr_npc_in(ir3_npc_out),
+	.sr_aluresult_in(ir3_alu_out),
+	.sr_ir_in(ir3_ir_out),
+	.sr_drid_in(ir3_drid_out),
+	
+	// Output Register Contents
+	.sr_address_out(),
+	.sr_data_out(),
+	.sr_cs_out(),
+	.sr_npc_out(),
+	.sr_aluresult_out(),
+	.sr_ir_out(),
+	.sr_drid_out()
+);
 
 
 
