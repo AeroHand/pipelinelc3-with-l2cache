@@ -44,12 +44,21 @@ lc3b_reg agex_mem_destout;
 
 lc3b_work pc_connect;
 
+
+lc3b_word agex_npc_out,
+lc3b_word agex_cs_out,
+lc3b_word agex_ir_out,
+lc3b_word agex_sr1_out,
+lc3b_word agex_sr2_out,
+lc3b_word agex_cc_out,
+lc3b_word agex_drid_out,
+
 fetch ifetch
 (
 	.clk(clk),
 	.branch_out(),    //branched pc address
-    .loadpc(ctrl.pcmux_sel),
-    .pc_out(pc_connect),       //pc address
+   .loadpc(ctrl.pcmux_sel),
+   .pc_out(pc_connect),       //pc address
 	.pcplus2_out(pcplus2)
 );
 

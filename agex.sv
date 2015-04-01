@@ -8,12 +8,12 @@ module agex
 	
 	// Incoming Registers
 	input lc3b_word agex_npc_out,
-	input lc3b_word agex_cs_out,
+	input lc3b_twenty agex_cs_out,
 	input lc3b_word agex_ir_out,
 	input lc3b_word agex_sr1_out,
 	input lc3b_word agex_sr2_out,
-	input lc3b_word agex_cc_out,
-	input lc3b_word agex_drid_out,
+	input lc3b_nzp agex_cc_out,
+	input lc3b_nzp agex_drid_out,
 	
 	// Address Generation Components
 	input addr1mux_sel,
@@ -27,9 +27,9 @@ module agex
 	
 	// Outgoing Registers
 	output lc3b_word mem_address_in,
-	output lc3b_cs mem_cs_in,
+	output lc3b_eleven mem_cs_in,
 	output lc3b_word mem_npc_in,
-	output lc3b_cc mem_cc_in,
+	output lc3b_nzp mem_cc_in,
 	output lc3b_word mem_aluresult_in,
 	output lc3b_word mem_ir_in,
 	output lc3b_drid mem_drid_in
