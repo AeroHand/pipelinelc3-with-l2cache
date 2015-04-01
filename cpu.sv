@@ -141,7 +141,34 @@ agex agex
 );
 
 ir3 ir33
-();
+(
+	// Load Register Signals
+	.load_mem_npc,
+	.load_mem_cs,
+	.load_mem_ir,
+	.load_mem_address,
+	.load_mem_aluresult,
+	.load_mem_cc,
+	.load_mem_drid,
+	
+	// Load Register Contents
+	.mem_address_in,
+	.mem_cs_in,
+	.mem_npc_in,
+	.mem_cc_in,
+	.mem_aluresult_in,
+	.mem_ir_in,
+	.mem_drid_in,
+	
+	// Output Register Contents
+	.mem_address_out,
+	.mem_cs_out,
+	.mem_npc_out,
+	.mem_cc_out,
+	.mem_aluresult_out,
+	.mem_ir_out,
+	.mem_drid_out
+);
 
 ir4 ir44
 ();
