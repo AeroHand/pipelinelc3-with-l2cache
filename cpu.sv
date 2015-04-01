@@ -114,6 +114,8 @@ ir2 ir22
 
 agex agex
 (
+	.clk
+	
 	//Inputs
 	.agex_npc_out,
 	.agex_cs_out,
@@ -145,6 +147,8 @@ agex agex
 
 ir3 ir33
 (
+	.clk,
+	
 	// Load Register Signals
 	.load_mem_npc,
 	.load_mem_cs,
@@ -190,6 +194,27 @@ mem mem_stage
 ir4 ir44
 ();
 
+sr sr
+(
+	.clk,
+	
+	// Incoming Registers	
+	.sr_address_out,
+	.sr_data_out,
+	.sr_cs_out,
+	.sr_npc_out,
+	.sr_aluresult_out,
+	.sr_ir_out,
+	.sr_drid_out,
+	
+	// Store inputs
+	.dr_valuemux_sel1,
+	.dr_valuemux_sel2,
+	.load_cc,
 
+	// Outputs
+	.lc3b_cc cccomp_out,
+	.lc3b_word dr_valuemux_out
+);
 
 endmodule : cpu
