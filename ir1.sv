@@ -1,50 +1,43 @@
-import lc3b_types::*;
+//top level entity for ex/mem flip flops
 
 module ir1
 (
+    //inputs/outputs here
+
     input clk,
-	 input logic load_mar, load_mdr,load_data
-    input lc3b_word marin,mdrin,
-	 
-    //output lc3b_opcode opcode,
-    output lc3b_reg dest, src1, src2,
-    
-	 output lc3b_offset6 offset6,
-    //output lc3b_offset9 offset9
+    input load,
+
+    input [15:0] if_plus2_out,
+    input [15:0] imem_rdata,
+
+    output logic [15:0] if_id_pc_out,
+    output logic [15:0] if_id_instr_out
 );
 
-lc3b_word data;
-lc3b_word mar;
-lc3b_word mdr;
+//internal signals here
 
-always_ff @(posedge clk)
-begin
-    if (load_mar == 1)
-    begin
-        mar = marin;
-    end
-	 
-	 if (load_mdr == 1)
-    begin
-        mdr = mdrin;
-    end
-	 
-	 if (load_data == 1)
-	 begin
-	     data=mdr;
-	 end	  
-end
+//modules here
 
-always_comb
-begin
-    //opcode = lc3b_opcode'(data[15:12]);
+//make regfile outs negative edge triggered! and cc too
 
-    dest = data[11:9];
-    src1 = data[8:6];
-    src2 = data[2:0];
+//need pc reg?
 
-    offset6 = data[5:0];
-    //offset9 = data[8:0];
-end
+//neg vs. pos???????
 
-endmodule : ir
+flipflop_positive if_id_pc_ff
+(
+    .clk(clk),
+    .load(load),
+    .d(if_plus2_out),
+    .q(if_id_pc_out)
+);
+
+flipflop_positive if_id_instr_ff
+(
+    .clk(clk),
+    .load(load),
+    .d(imem_rdata),
+    .q(if_id_instr_out)
+);
+
+endmodule : ir1
