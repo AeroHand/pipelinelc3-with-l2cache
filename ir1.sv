@@ -24,7 +24,7 @@ module ir1
 
 //neg vs. pos???????
 
-flipflop_positive if_id_pc_ff
+ff if_id_pc_ff
 (
     .clk(clk),
     .load(load),
@@ -32,7 +32,7 @@ flipflop_positive if_id_pc_ff
     .q(if_id_pc_out)
 );
 
-flipflop_positive if_id_instr_ff
+ff if_id_instr_ff
 (
     .clk(clk),
     .load(load),

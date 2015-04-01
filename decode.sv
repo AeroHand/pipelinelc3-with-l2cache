@@ -35,7 +35,7 @@ logic [15:0] adj6_out;
 
 //modules here
 
-control ctrlrom_unit
+control ctrl
 (
 	.opcode(instruction[15:12]),
 	.useimm5(instruction[5]),
