@@ -97,9 +97,9 @@ lshf1 lshf1_addr
 
 adder adder_agex
 (
-	.a(addr1mux_out),
-	.b(lshf1_addr_out),
-	.f(adder_out)
+	.aa(addr1mux_out),
+	.bb(lshf1_addr_out),
+	.ff(adder_out)
 );
 
 zext_lshf1 zext_lshf1_ir
