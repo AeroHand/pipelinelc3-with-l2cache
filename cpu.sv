@@ -31,22 +31,16 @@ module cpu
 fetch if
 (
 	.clk(clk),
-	.branch(branch),
-	.ctrl(ex_mem_ctrl_out),
-	.if_id_pc_out(if_id_pc_out),
-	.ex_mem_pc_out(ex_mem_pc_out),
-	.id_ex_sr1_out(ex_mem_sr1_out),
-	.ex_mem_bradj_out(ex_mem_bradj_out),
-	.mem_wb_mdr_out(mem_wdata),
-	.pcmux_out(imem_address),
-	.pcplus2_out(plus2_out)
+
 );
 
 ir1 ir11
-();
+(
+);
 
 decode id
-();
+(
+);
 
 ir2 ir22
 ();
