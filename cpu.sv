@@ -31,15 +31,41 @@ module cpu
 fetch if
 (
 	.clk(clk),
-
+	.branch_out(,    //branched pc address
+    .loadpc,
+    .pc_out,       //pc address
+	.pcplus2_out
 );
 
 ir1 ir11
 (
+    .clk,
+    .load,
+
+    .if_plus2_out,
+    .imem_rdata,
+
+    .if_id_pc_out,
+    .if_id_instr_out
 );
 
 decode id
-(
+(	
+    .clk,
+
+	.regfilemux_out,
+	.instruction,
+	
+	.destb,
+	
+
+	.adjtrap_out,
+	.adjmux_out,
+	.adj6_out,
+	.ctrl,
+	.ctrlwb,
+	.sr1_out,
+	.sr2_out
 );
 
 ir2 ir22
