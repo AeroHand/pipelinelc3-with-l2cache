@@ -27,7 +27,7 @@ module cpu
 
 
 );
-
+assign logic loadsignal=1'b1;
 
 logic branch_enable;
 lc3b_control_word  cntrl_word;
@@ -88,13 +88,13 @@ ir2 ir22
 	.clk,
 	
 	//Loads
-	.load_agex_npc(ctrl.),
-	.load_agex_cs,
-	.load_agex_ir,
-	.load_agex_sr1,
-	.load_agex_sr2,
-	.load_agex_cc,
-	.load_agex_drid,
+	.load_agex_npc(loadsignal),
+	.load_agex_cs(loadsignal),
+	.load_agex_ir(loadsignal),
+	.load_agex_sr1(loadsignal),
+	.load_agex_sr2(loadsignal),
+	.load_agex_cc(loadsignal),
+	.load_agex_drid(loadsignal),
 	
 	//Inputs
 	.agex_npc_in,
@@ -153,13 +153,13 @@ ir3 ir33
 	.clk,
 	
 	// Load Register Signals
-	.load_mem_npc(),
-	.load_mem_cs(),
-	.load_mem_ir(),
-	.load_mem_address(),
-	.load_mem_aluresult(),
-	.load_mem_cc(),
-	.load_mem_drid(),
+	.load_mem_npc(loadsignal),
+	.load_mem_cs(loadsignal),
+	.load_mem_ir(loadsignal),
+	.load_mem_address(loadsignal),
+	.load_mem_aluresult(loadsignal),
+	.load_mem_cc(loadsignal),
+	.load_mem_drid(loadsignal),
 	
 	// Load Register Contents
 	.mem_address_in(),
@@ -199,13 +199,13 @@ ir4 ir44
     .clk,
 	
 	// Load Register Signals
-	.load_sr_address(),
-	.load_sr_data(),
-	.load_sr_cs(),
-	.load_sr_npc(),
-	.load_sr_aluresult(),
-	.load_sr_ir(),
-	.load_sr_drid(),
+	.load_sr_address(loadsignal),
+	.load_sr_data(loadsignal),
+	.load_sr_cs(loadsignal),
+	.load_sr_npc(loadsignal),
+	.load_sr_aluresult(loadsignal),
+	.load_sr_ir(loadsignal),
+	.load_sr_drid(loadsignal),
 	
 	// Load Register Contents
 	.sr_address_in(ir3_addr_out),
