@@ -11,9 +11,6 @@ module decode
 	input [2:0] destb,
 	
 
-	output logic [15:0] adjtrap_out,
-	output logic [15:0] adjmux_out,
-	output logic [15:0] adj6_out,
 	output lc3b_control_word  ctrl,
 	input lc3b_control_word ctrlwb,
 	output logic [15:0] sr1_out,
@@ -64,22 +61,6 @@ mux2 #(.width(3)) storemux
 	.a(instruction[2:0]), //sr2
 	.b(instruction[11:9]), //dest
 	.f(storemux_out)
-);
-
-mux2 #(.width(16)) adjmux
-(
-	.sel(ctrl.adjmux_sel),
-	.a(adj9_out),
-	.b(adj11_out),
-	.f(adjmux_out)
-);
-
-
-
-adj #(.width(6)) adj6
-(
-	.in(instruction[5:0]), //offset6
-	.out(adj6_out)
 );
 
 
