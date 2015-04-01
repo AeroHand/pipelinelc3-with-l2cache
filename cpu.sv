@@ -38,12 +38,21 @@ lc3b_reg agex_mem_destout;
 lc3b_word pc_connect;
 lc3b_control_word ctrl;
 
+
+lc3b_word agex_npc_out,
+lc3b_word agex_cs_out,
+lc3b_word agex_ir_out,
+lc3b_word agex_sr1_out,
+lc3b_word agex_sr2_out,
+lc3b_word agex_cc_out,
+lc3b_word agex_drid_out,
+
 fetch ifetch
 (
 	.clk(clk),
 	.branch_out(),    //branched pc address
-    .loadpc(ctrl.pcmux_sel),
-    .pc_out(pc_connect),       //pc address
+   .loadpc(ctrl.pcmux_sel),
+   .pc_out(pc_connect),       //pc address
 	.pcplus2_out(pcplus2)
 );
 
@@ -108,6 +117,8 @@ ir2 ir22
 
 agex agex
 (
+	.clk
+	
 	//Inputs
 	.agex_npc_out,
 	.agex_cs_out,
@@ -138,8 +149,7 @@ agex agex
 );
 
 ir3 ir33
-(	//from nick
-
+(
 	.clk,
 	
 	// Load Register Signals
@@ -216,6 +226,27 @@ ir4 ir44
 	.sr_drid_out()
 );
 
+sr sr
+(
+	.clk,
+	
+	// Incoming Registers	
+	.sr_address_out,
+	.sr_data_out,
+	.sr_cs_out,
+	.sr_npc_out,
+	.sr_aluresult_out,
+	.sr_ir_out,
+	.sr_drid_out,
+	
+	// Store inputs
+	.dr_valuemux_sel1,
+	.dr_valuemux_sel2,
+	.load_cc,
 
+	// Outputs
+	.lc3b_cc cccomp_out,
+	.lc3b_word dr_valuemux_out
+);
 
 endmodule : cpu
