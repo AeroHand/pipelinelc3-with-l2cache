@@ -34,47 +34,50 @@ module cpu
 	input load_agex_drid
 
 );
+assign load = ((!(ex_mem_ctrl_out.in_indirect) || indirect_reg_out) && !(ex_mem_ctrl_out.in_mem && !(mem_resp)) && imem_resp);
 
+logic branch_enable;
+lc3b_control_word  cntrl_word;
+lc3b_word agex_mem_aluout;
+lc3b_word agex_mem_pcout;
+lc3b_reg agex_mem_destout;
 
+lc3b_work pc_connect;
 
-fetch if
+fetch ifetch
 (
 	.clk(clk),
-	.branch_out(,    //branched pc address
-    .loadpc,
-    .pc_out,       //pc address
-	.pcplus2_out
+	.branch_out(),    //branched pc address
+    .loadpc(ctrl.pcmux_sel),
+    .pc_out(pc_connect),       //pc address
+	.pcplus2_out(pcplus2)
 );
 
 ir1 ir11
 (
-    .clk,
-    .load,
+    .clk(clk),
+    .load(load),
 
-    .if_plus2_out,
-    .imem_rdata,
+    .if_plus2_out(pcplus2),
+    .imem_rdata(imem_rdata),
 
-    .if_id_pc_out,
-    .if_id_instr_out
+    .if_id_pc_out(pc_connect),
+    .if_id_instr_out(instr)
 );
 
 decode id
 (	
-    .clk,
+    .clk(clk),
 
-	.regfilemux_out,
-	.instruction,
+	.regfilemux_out(regfilemux_out),
+	.instruction(instr),
 	
-	.destb,
+	.destb(agex_mem_destout),
 	
-
-	.adjtrap_out,
-	.adjmux_out,
-	.adj6_out,
-	.ctrl,
-	.ctrlwb,
-	.sr1_out,
-	.sr2_out
+	.ctrl(ctrl),
+	.ctrlwb(cntrl_word),
+	.sr1_out(sr1_out),
+	.sr2_out(sr2_out)
 );
 
 ir2 ir22
@@ -168,6 +171,20 @@ ir3 ir33
 	.mem_aluresult_out,
 	.mem_ir_out,
 	.mem_drid_out
+);
+
+mem mem_stage
+(
+	.load_cc(cntrl_word.load_cc),
+	.ex_mem_alu_out(agex_mem_aluout),
+	.ex_mem_pc_out(agex_mem_pcout),
+	.mem_wb_dest_out(agex_mem_destout),
+	.wb_regfilemux_out(regfilemux_out),
+	.ctrl(cntrl_word),
+	
+	.marmux_out(mem_address),
+	.mdrmux_out(mem_wdata),
+	.branch_enable(branch_enable)
 );
 
 ir4 ir44
