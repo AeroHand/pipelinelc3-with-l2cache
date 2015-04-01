@@ -39,13 +39,30 @@ lc3b_word pc_connect;
 lc3b_control_word ctrl;
 
 
+// Agex
 lc3b_word agex_npc_out,
-lc3b_word agex_cs_out,
+lc3b_twenty agex_cs_out,
 lc3b_word agex_ir_out,
 lc3b_word agex_sr1_out,
 lc3b_word agex_sr2_out,
-lc3b_word agex_cc_out,
-lc3b_word agex_drid_out,
+lc3b_nzp agex_cc_out,
+lc3b_nzp agex_drid_out,
+lc3b_word mem_address_in,
+lc3b_eleven mem_cs_in,
+lc3b_word mem_npc_in,
+lc3b_nzp mem_cc_in,
+lc3b_word mem_aluresult_in,
+lc3b_word mem_ir_in,
+lc3b_drid mem_drid_in
+
+//IR 3
+lc3b_word mem_address_out,
+lc3b_eleven mem_cs_out,
+lc3b_word mem_npc_out,
+lc3b_nzp mem_cc_out,
+lc3b_word mem_aluresult_out,
+lc3b_word mem_ir_out,
+lc3b_nzp mem_drid_out
 
 fetch ifetch
 (
