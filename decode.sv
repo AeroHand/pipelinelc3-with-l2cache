@@ -9,7 +9,7 @@ module decode
 	input [15:0] instruction,
 	
 	input [2:0] destb,
-	
+	input [2:0] deir,
 
 	output lc3b_control_word  ctrl,
 	input lc3b_control_word ctrlwb,

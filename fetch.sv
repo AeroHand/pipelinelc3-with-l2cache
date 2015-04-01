@@ -6,9 +6,10 @@ module fetch
 	
 	input [15:0] branch_out,    //branched pc address
     input logic loadpc,
-    output logic [15:0] pc_out,       //pc address
 	output logic [15:0] pcplus2_out
 );
+
+lc3b_word pc_out;
 
 mux2 #(.width(16)) pcmux
 (

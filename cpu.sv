@@ -68,8 +68,7 @@ fetch ifetch
 (
 	.clk(clk),
 	.branch_out(),    //branched pc address
-   .loadpc(ctrl.pcmux_sel),
-   .pc_out(pc_connect),       //pc address
+    .loadpc(ctrl.pcmux_sel),
 	.pcplus2_out(pcplus2)
 );
 
@@ -97,7 +96,8 @@ decode id
 	.ctrl(ctrl),
 	.ctrlwb(cntrl_word),
 	.sr1_out(sr1_out),
-	.sr2_out(sr2_out)
+	.sr2_out(sr2_out),
+	.dr_out(dr_out)
 );
 
 ir2 ir22
@@ -114,9 +114,9 @@ ir2 ir22
 	.load_agex_drid(loadsignal),
 	
 	//Inputs
-	.agex_npc_in,
-	.agex_cs_in,
-	.agex_ir_in,
+	.agex_npc_in(pc_connect),
+	.agex_cs_in(),
+	.agex_ir_in(instr),
 	.agex_sr1_in(sr1_out),
 	.agex_sr2_in(sr2_out),
 	.agex_cc_in,
