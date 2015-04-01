@@ -15,12 +15,21 @@ module ir2
 	
 	// Load Register Contents
 	input lc3b_word agex_npc_in,
-	input [20] agex_cs_in,
+	input lc3b_twenty agex_cs_in,
 	input lc3b_word agex_ir_in,
 	input lc3b_word agex_sr1_in,
 	input lc3b_word agex_sr2_in,
 	input lc3b_nzp agex_cc_in,
-	input lc3b_nzp agex_drid_in
+	input lc3b_nzp agex_drid_in,
+	
+	// Output Register Contents
+	output lc3b_word agex_npc_out,
+	output lc3b_twenty agex_cs_out,
+	output lc3b_word agex_ir_out,
+	output lc3b_word agex_sr1_out,
+	output lc3b_word agex_sr2_out,
+	output lc3b_nzp agex_cc_out,
+	output lc3b_nzp agex_drid_out
 	
     );
 
