@@ -4,7 +4,7 @@ module ir2
 (
     input clk,
 	
-	// Load Register Signals
+	// Load ff Signals
 	input load_agex_npc,
 	input load_agex_cs,
 	input load_agex_ir,
@@ -13,7 +13,7 @@ module ir2
 	input load_agex_cc,
 	input load_agex_drid,
 	
-	// Load Register Contents
+	// Load ff Contents
 	input lc3b_word agex_npc_in,
 	input lc3b_twenty agex_cs_in,
 	input lc3b_word agex_ir_in,
@@ -22,7 +22,7 @@ module ir2
 	input lc3b_nzp agex_cc_in,
 	input lc3b_nzp agex_drid_in,
 	
-	// Output Register Contents
+	// Output ff Contents
 	output lc3b_word agex_npc_out,
 	output lc3b_twenty agex_cs_out,
 	output lc3b_word agex_ir_out,
@@ -33,8 +33,8 @@ module ir2
 	
     );
 
-// Incoming Registers
-register agex_npc
+// Incoming ffs
+ff agex_npc
 (
 	.clk,
 	.load(load_agex_npc),
@@ -42,7 +42,7 @@ register agex_npc
 	.out(agex_npc_out)
 );
 
-register #(20) agex_cs
+ff #(20) agex_cs
 (
 	.clk,
 	.load(load_agex_cs),
@@ -50,7 +50,7 @@ register #(20) agex_cs
 	.out(agex_cs_out)
 );
 
-register agex_ir
+ff agex_ir
 (
 	.clk,
 	.load(load_agex_ir),
@@ -58,7 +58,7 @@ register agex_ir
 	.out(agex_ir_out)
 );
 
-register agex_sr1
+ff agex_sr1
 (
 	.clk,
 	.load(load_agex_sr1),
@@ -66,7 +66,7 @@ register agex_sr1
 	.out(agex_sr1_out)
 );
 
-register agex_sr2
+ff agex_sr2
 (
 	.clk,
 	.load(load_agex_sr2),
@@ -74,7 +74,7 @@ register agex_sr2
 	.out(agex_sr2_out)
 );
 
-register #(3) agex_cc
+ff #(3) agex_cc
 (
 	.clk,
 	.load(load_agex_cc),
@@ -82,7 +82,7 @@ register #(3) agex_cc
 	.out(agex_cc_out)
 );
 
-register #(3) agex_drid
+ff #(3) agex_drid
 (
 	.clk,
 	.load(load_agex_drid),

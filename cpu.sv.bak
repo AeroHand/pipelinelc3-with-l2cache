@@ -22,16 +22,7 @@ module cpu
 	output logic imem_write,
 	output logic [1:0] imem_byte_enable,
 	
-	input imem_resp,
-	
-	// Flip Flop Load for IR2
-	input load_agex_npc,
-	input load_agex_cs,
-	input load_agex_ir,
-	input load_agex_sr1,
-	input load_agex_sr2,
-	input load_agex_cc,
-	input load_agex_drid
+	input imem_resp
 
 );
 
@@ -78,32 +69,7 @@ decode id
 );
 
 ir2 ir22
-(
-	.clk,
-	
-	//Loads
-	
-	
-	//Inputs
-	.agex_npc_in,
-	.agex_cs_in,
-	.agex_ir_in,
-	.agex_sr1_in(sr1_out),
-	.agex_sr2_in(sr2_out),
-	.agex_cc_in,
-	.agex_drid_in,
-	
-	//Outputs
-	.agex_npc_out,
-	.agex_cs_out,
-	.agex_ir_out,
-	.agex_sr1_out,
-	.agex_sr2_out,
-	.agex_cc_out,
-	.agex_drid_out
-);
-
-agex agex
+();
 
 ir3 ir33
 ();
