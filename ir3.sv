@@ -17,19 +17,19 @@ module ir3
 	input lc3b_word mem_address_in,
 	input lc3b_eleven mem_cs_in,
 	input lc3b_word mem_npc_in,
-	input lc3b_cc mem_cc_in,
+	input lc3b_nzp mem_cc_in,
 	input lc3b_word mem_aluresult_in,
 	input lc3b_word mem_ir_in,
-	input lc3b_drid mem_drid_in,
+	input lc3b_nzp mem_drid_in,
 	
 	// Output Register Contents
 	output lc3b_word mem_address_out,
 	output lc3b_eleven mem_cs_out,
 	output lc3b_word mem_npc_out,
-	output lc3b_cc mem_cc_out,
+	output lc3b_nzp mem_cc_out,
 	output lc3b_word mem_aluresult_out,
 	output lc3b_word mem_ir_out,
-	output lc3b_drid mem_drid_out
+	output lc3b_nzp mem_drid_out
 	
     );
 

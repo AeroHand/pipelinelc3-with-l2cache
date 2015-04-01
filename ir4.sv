@@ -1,36 +1,93 @@
 import lc3b_types::*;
 
-module ir
+module ir2
 (
     input clk,
-    input load,
-    input lc3b_word in,
-    output lc3b_opcode opcode,
-    output lc3b_reg dest, src1, src2,
-    output lc3b_offset6 offset6,
-    output lc3b_offset9 offset9
+	
+	// Load Register Signals
+	input load_agex_npc,
+	input load_agex_cs,
+	input load_agex_ir,
+	input load_agex_sr1,
+	input load_agex_sr2,
+	input load_agex_cc,
+	input load_agex_drid,
+	
+	// Load Register Contents
+	input lc3b_word agex_npc_in,
+	input lc3b_twenty agex_cs_in,
+	input lc3b_word agex_ir_in,
+	input lc3b_word agex_sr1_in,
+	input lc3b_word agex_sr2_in,
+	input lc3b_nzp agex_cc_in,
+	input lc3b_nzp agex_drid_in,
+	
+	// Output Register Contents
+	output lc3b_word agex_npc_out,
+	output lc3b_twenty agex_cs_out,
+	output lc3b_word agex_ir_out,
+	output lc3b_word agex_sr1_out,
+	output lc3b_word agex_sr2_out,
+	output lc3b_nzp agex_cc_out,
+	output lc3b_nzp agex_drid_out
+	
+    );
+
+// Incoming Registers
+register agex_npc
+(
+	.clk,
+	.load(load_agex_npc),
+	.in(agex_npc_in),
+	.out(agex_npc_out)
 );
 
-lc3b_word data;
+register #(20) agex_cs
+(
+	.clk,
+	.load(load_agex_cs),
+	.in(agex_cs_in),
+	.out(agex_cs_out)
+);
 
-always_ff @(posedge clk)
-begin
-    if (load == 1)
-    begin
-        data = in;
-    end
-end
+register agex_ir
+(
+	.clk,
+	.load(load_agex_ir),
+	.in(agex_ir_in),
+	.out(agex_ir_out)
+);
 
-always_comb
-begin
-    opcode = lc3b_opcode'(data[15:12]);
+register agex_sr1
+(
+	.clk,
+	.load(load_agex_sr1),
+	.in(agex_sr1_in),
+	.out(agex_sr1_out)
+);
 
-    dest = data[11:9];
-    src1 = data[8:6];
-    src2 = data[2:0];
+register agex_sr2
+(
+	.clk,
+	.load(load_agex_sr2),
+	.in(agex_sr2_in),
+	.out(agex_sr2_out)
+);
 
-    offset6 = data[5:0];
-    offset9 = data[8:0];
-end
+register #(3) agex_cc
+(
+	.clk,
+	.load(load_agex_cc),
+	.in(agex_cc_in),
+	.out(agex_cc_out)
+);
 
-endmodule : ir
+register #(3) agex_drid
+(
+	.clk,
+	.load(load_agex_drid),
+	.in(agex_drid_in),
+	.out(agex_drid_out)
+);
+
+endmodule : ir2
