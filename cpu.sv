@@ -82,7 +82,13 @@ ir2 ir22
 	.clk,
 	
 	//Loads
-	
+	.load_agex_npc,
+	.load_agex_cs,
+	.load_agex_ir,
+	.load_agex_sr1,
+	.load_agex_sr2,
+	.load_agex_cc,
+	.load_agex_drid,
 	
 	//Inputs
 	.agex_npc_in,
@@ -104,6 +110,35 @@ ir2 ir22
 );
 
 agex agex
+(
+	//Inputs
+	.agex_npc_out,
+	.agex_cs_out,
+	.agex_ir_out,
+	.agex_sr1_out,
+	.agex_sr2_out,
+	.agex_cc_out,
+	.agex_drid_out,
+	
+	// Address Generation Components
+	.addr1mux_sel,
+	.addr2mux_sel1,
+	.addr2mux_sel2,
+	.addressmux_sel,
+	.lshf1_enable,
+	.aluresultmux_sel,
+	.sr2mux_sel,
+	.lc3b_aluop aluop,
+	
+	// Outgoing Registers
+	.mem_address_in,
+	.mem_cs_in,
+	.mem_npc_in,
+	.mem_cc_in,
+	.mem_aluresult_in,
+	.mem_ir_in,
+	.mem_drid_in
+);
 
 ir3 ir33
 ();
