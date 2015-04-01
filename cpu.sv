@@ -227,20 +227,20 @@ ir4 ir44
 	// Load Register Contents
 	.sr_address_in(ir3_addr_out),
 	.sr_data_in(mem_wdata), // Correct?
-	.sr_cs_in(ir3_cs_out[10:7]),
+	.sr_cs_in([10:7]ir3_cs_out),
 	.sr_npc_in(ir3_npc_out),
 	.sr_aluresult_in(ir3_alu_out),
 	.sr_ir_in(ir3_ir_out),
 	.sr_drid_in(ir3_drid_out),
 	
 	// Output Register Contents
-	.sr_address_out(),
-	.sr_data_out(),
-	.sr_cs_out(),
-	.sr_npc_out(),
-	.sr_aluresult_out(),
-	.sr_ir_out(),
-	.sr_drid_out()
+	.sr_address_out,
+	.sr_data_out,
+	.sr_cs_out,
+	.sr_npc_out,
+	.sr_aluresult_out,
+	.sr_ir_out,
+	.sr_drid_out
 );
 
 sr sr
