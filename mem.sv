@@ -33,4 +33,7 @@ assign sr_aluresult_in = mem_aluresult_out;
 assign sr_ir_in = mem_ir_out;
 assign sr_drid_in = mem_drid_out;
 
+assign mem_address = mem_address_out;
+assign mem_wdata = mem_aluresult_out;
+
 endmodule: mem

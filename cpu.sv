@@ -40,29 +40,38 @@ lc3b_control_word ctrl;
 
 
 // Agex
-lc3b_word agex_npc_out,
-lc3b_twenty agex_cs_out,
-lc3b_word agex_ir_out,
-lc3b_word agex_sr1_out,
-lc3b_word agex_sr2_out,
-lc3b_nzp agex_cc_out,
-lc3b_nzp agex_drid_out,
-lc3b_word mem_address_in,
-lc3b_eleven mem_cs_in,
-lc3b_word mem_npc_in,
-lc3b_nzp mem_cc_in,
-lc3b_word mem_aluresult_in,
-lc3b_word mem_ir_in,
-lc3b_drid mem_drid_in
+lc3b_word agex_npc_out;
+lc3b_twenty agex_cs_out;
+lc3b_word agex_ir_out;
+lc3b_word agex_sr1_out;
+lc3b_word agex_sr2_out;
+lc3b_nzp agex_cc_out;
+lc3b_nzp agex_drid_out;
+lc3b_word mem_address_in;
+lc3b_eleven mem_cs_in;
+lc3b_word mem_npc_in;
+lc3b_nzp mem_cc_in;
+lc3b_word mem_aluresult_in;
+lc3b_word mem_ir_in;
+lc3b_drid mem_drid_in;
 
 //IR 3
-lc3b_word mem_address_out,
-lc3b_eleven mem_cs_out,
-lc3b_word mem_npc_out,
-lc3b_nzp mem_cc_out,
-lc3b_word mem_aluresult_out,
-lc3b_word mem_ir_out,
-lc3b_nzp mem_drid_out
+lc3b_word mem_address_out;
+lc3b_eleven mem_cs_out;
+lc3b_word mem_npc_out;
+lc3b_nzp mem_cc_out;
+lc3b_word mem_aluresult_out;
+lc3b_word mem_ir_out;
+lc3b_nzp mem_drid_out;
+
+//IR4
+lc3b_word sr_address_in;
+lc3b_word sr_data_in;
+lc3b_four sr_cs_in;
+lc3b_word sr_npc_in;
+lc3b_word sr_aluresult_in;
+lc3b_word sr_ir_in;
+lc3b_nzp sr_drid_in;
 
 fetch ifetch
 (
@@ -188,27 +197,36 @@ ir3 ir33
 	.mem_drid_in(),
 	
 	// Output Register Contents
-	.mem_address_out(ir3_addr_out),
-	.mem_cs_out(ir3_cs_out),
-	.mem_npc_out(ir3_npc_out),
-	.mem_cc_out(),
-	.mem_aluresult_out(ir3_alu_out),
-	.mem_ir_out(ir3_ir_out),
-	.mem_drid_out(ir3_drid_out)
+	.mem_address_out,
+	.mem_cs_out,
+	.mem_npc_out,
+	.mem_cc_out,
+	.mem_aluresult_out,
+	.mem_ir_out,
+	.mem_drid_out
 );
 
 mem mem_stage
 (
-	.load_cc(cntrl_word.load_cc),
-	.ex_mem_alu_out(agex_mem_aluout),
-	.ex_mem_pc_out(agex_mem_pcout),
-	.mem_wb_dest_out(agex_mem_destout),
-	.wb_regfilemux_out(regfilemux_out),
-	.ctrl(cntrl_word),
+	.mem_address_out,
+	.mem_cs_out,
+	.mem_npc_out,
+	.mem_cc_out,
+	.mem_aluresult_out,
+	.mem_ir_out,
+	.mem_drid_out,
 	
-	.marmux_out(mem_address),
-	.mdrmux_out(mem_wdata),
-	.branch_enable(branch_enable)
+	.sr_address_in,
+	.sr_data_in,
+	.sr_cs_in,
+	.sr_npc_in,
+	.sr_aluresult_in,
+	.sr_ir_in,
+	.sr_drid_in,
+	
+	.mem_rdata,
+	.mem_address,
+	.mem_wdata
 );
 
 ir4 ir44
@@ -225,13 +243,13 @@ ir4 ir44
 	.load_sr_drid(loadsignal),
 	
 	// Load Register Contents
-	.sr_address_in(ir3_addr_out),
-	.sr_data_in(mem_wdata), // Correct?
-	.sr_cs_in([10:7]ir3_cs_out),
-	.sr_npc_in(ir3_npc_out),
-	.sr_aluresult_in(ir3_alu_out),
-	.sr_ir_in(ir3_ir_out),
-	.sr_drid_in(ir3_drid_out),
+	.sr_address_in,
+	.sr_data_in,
+	.sr_cs_in,
+	.sr_npc_in,
+	.sr_aluresult_in,
+	.sr_ir_in,
+	.sr_drid_in,
 	
 	// Output Register Contents
 	.sr_address_out,
