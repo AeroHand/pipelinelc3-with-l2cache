@@ -4,24 +4,18 @@ module fetch
 (
 	input clk,
 	
-	input [15:0] target_pc,
-   input [15:0] trap_pc,
-   input logic loadpc,
+	input [15:0] branch_out,    //branched pc address
+    input logic loadpc,
 	output logic [15:0] pcplus2_out
 );
 
 lc3b_word pc_out;
 
-// Must add the instruction cache to this stage
-
-mux4 #(.width(16)) pcmux
+mux2 #(.width(16)) pcmux
 (
-	.sel1(ctrl.pcmux_sel),
-	.sel2(pcmux_sel2),
+	.sel(ctrl.pcmux_sel),
 	.a(pcplus2_out),
-	.b(target_pc),
-	.c(trap_pc),
-	.d(),
+	.b(branch_out),
 	.f(pcmux_out)
 );
 
